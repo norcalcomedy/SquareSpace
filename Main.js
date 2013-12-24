@@ -46,17 +46,17 @@ $(document).ready(function() {
                 e.preventDefault();
 
                 //Grab the note details, no real validation for now
-    var title = $("#noteTitle").val();
-    var subject = $("#noteSubject").val();
+    var title = $("#noteHeadLiner").val();
+    var subject = $("#noteVenue").val();
                 var body = $("#noteBody").val();
 
                 var note = new NoteObject();
                 note.save({title:title, subject:subject, body:body}, {
                         success:function(object) {
                                 console.log("Saved the object!");
-                                $("#noteTitle").val("");
-                                $("#noteSubject").val("");
-                                $("#noteBody").val("");
+                                $("#noteHeadLiner").val("");
+                                $("#noteVenue").val("");
+                                $("#noteDateRange").val("");
                                 getNotes();
                         }, 
                         error:function(object,error) {
